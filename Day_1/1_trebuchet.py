@@ -2,8 +2,8 @@
 Day 1: Trebuchet?!
 Author: dnicolauit
 Date: 2023-12-01
-Answer: 53921
-
+Answer 1: 53921
+Answer 2: 54676
 """
 
 # Part 1
