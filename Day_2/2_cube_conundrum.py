@@ -2,8 +2,8 @@
 Day 2: Cube Conundrum
 Author: dnicolauit
 Date: 2023-12-02
-Answer 1: 
-Answer 2: 
+Answer 1: 2486
+Answer 2: 87984
 """
 
 # Part 1
@@ -34,3 +34,14 @@ for key in data_dict.keys():
         solution += key
 
 print('Part 1 solution:',solution)
+
+# Part 2
+solution = 0
+for key in data_dict.keys():
+    get_colors = [[],[],[]]
+    for data in data_dict[key]:
+        for i, val in enumerate(data):
+            get_colors[i].append(val)
+    solution += max(get_colors[0])*max(get_colors[1])*max(get_colors[2])
+    
+print('Part 2 solution:',solution)
