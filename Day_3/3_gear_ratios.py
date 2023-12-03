@@ -3,12 +3,13 @@ Day 3: Gear Ratios
 Author: dnicolauit
 Date: 2023-12-03
 Answer 1: 537832
-Answer 2: 
+Answer 2: 81939900
 """ 
 
 import re
-from utils import see_if_adjacent
+from utils import see_if_adjacent, count_adjacent_to_gear
 
+# Part 1
 
 data_matrix = []
 not_symbols = '0123456789.'
@@ -37,4 +38,23 @@ for i in range(len(data)):
 print('Part 1 solution:',solution)
 
         
+# Part 2
+
+# Get gear positions
+gear_dict={}
+symbol = '*'
+for i in range(len(data)):
+    ind = [pos for pos, char in enumerate(data[i]) if char == '*']
+    if ind==[]:
+        continue
+    gear_dict[i]=ind
+
+solution = 0
+for ind in gear_dict.keys():
+    index = gear_dict[ind]
+    for j in index:
+        result = count_adjacent_to_gear(data_dict=data_dict, index_horizontal=j, index_vertical=ind, max_vertical=len(data_matrix), max_horizontal=len(data_matrix[0]))
+        solution += result
+
+print('Part 2 solution:',solution)
 

@@ -20,3 +20,31 @@ def see_if_adjacent(matrix, number_len, index_horizontal, index_vertical, restri
             if  matrix[coord[0]][coord[1]] not in restrictions:
                 return True
     return False
+
+def count_adjacent_to_gear(data_dict,index_horizontal,index_vertical,max_vertical,max_horizontal):
+    v=[]
+    data = []
+    search_horizontal = []
+    # Our search is limited to the line above, bellow and the same as the gear
+    for i in range(-1,2):
+        if 0<=index_vertical+i<=max_vertical-1:
+            data.append(data_dict[index_vertical+i])
+        if 0<=index_horizontal+i<=max_horizontal-1:
+            search_horizontal.append(index_horizontal+i)
+
+
+    for i in range(len(data)):
+        # number is the numbers in line i
+        for number in data[i].keys():
+            # j is an array of indexes of the appearance of the first digit of number
+            for j in data[i][number]:
+                # Finally, k are the indexes that contain the number
+                for k in range(j,j+len(number)):
+                    if k in search_horizontal:
+                        v.append(int(number))
+                        if len(v)==2:
+                            result = v[0]*v[1]
+                            return result
+                        break
+
+    return 0
