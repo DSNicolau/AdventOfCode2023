@@ -4,5 +4,3 @@ These examples were created by **ric2b** and shared on the [Advent of Code subre
 
 Additionally, **Example 9** was reated to test Part 2, and **Example 10** is the example provided on the [problem](https://adventofcode.com/2023/day/3).
 
-Example 9 was created to test Part 2.
-Example 10 is the example provided on the problem.
