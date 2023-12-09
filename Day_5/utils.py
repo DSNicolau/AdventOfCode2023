@@ -41,9 +41,7 @@ class Almanac:
 
     def find_dest(self,conversion):
         for key,seed in enumerate(self.current_input):
-            number = [dest+seed-minim if minim<=seed<=maxim else seed for minim,maxim,dest in self.almanac[conversion]]
-            self.current_input[key] = next((num for num in number if num!=seed), seed)
+            self.current_input[key] = next((dest+seed-minim for minim,maxim,dest in self.almanac[conversion] if minim<=seed<=maxim), seed)
 
-    
-    def print_min_location(self):
+    def get_min_location(self):
         return min(self.current_input)

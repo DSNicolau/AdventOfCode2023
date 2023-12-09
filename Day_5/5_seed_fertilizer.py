@@ -9,6 +9,6 @@ Answer 2:
 from utils import Almanac
 almanac = Almanac('Day_5/5_seed_fertilizer_data.txt')
 almanac.compute()
-solution = almanac.print_min_location()
+solution = almanac.get_min_location()
 
 print('Part 1 solution:',solution)
