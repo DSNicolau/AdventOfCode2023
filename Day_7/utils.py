@@ -17,3 +17,22 @@ def get_sorted_bids(ranks, play_strength, play_int, bid):
             for i in sorted_play_idx:
                 sorted_bid.append(bid[idx[i]])
     return sorted_bid
+
+def get_dict(play):
+    d = {}
+    for c in play:
+        if c in d:
+            d[c] += 1
+        else:
+            d[c] = 1
+    return d
+
+def replaceJ(play):
+    d = get_dict(play)
+    if 'J' in play and d['J']<5:
+        del d['J']
+        new_play = play.replace('J',sorted(d.items(), key=lambda x:x[1])[-1][0])
+        d = get_dict(new_play)
+    else : 
+        new_play = play
+    return new_play,d
