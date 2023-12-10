@@ -11,6 +11,7 @@ data = open("Day_6/6_wait_for_it_data.txt").read().splitlines()
 time = [int(i) for i in (data[0].split(':')[1]).split()]
 distance = [int(i) for i in (data[1].split(':')[1]).split()]
 
+# Part 1
 
 # This is basically a quadratic inequation, so we'll use the quadratic formula to solve it.
 # tt = total_time
@@ -22,12 +23,14 @@ distance = [int(i) for i in (data[1].split(':')[1]).split()]
 # (-tt+sqrt(tt²-4d))/(-2) > ht > (-tt-sqrt(tt²-4d))/(-2)
 # However, a small characteristic needs to be added
 # When the number is not integer (without the ceil and floor operation), we need to subtract one
-# SO we introduce a conditional, if the sqrt is not an integer, we subtract one
+# So we introduce a conditional, if the sqrt is not an integer, we subtract one
 solution = 1
 for tt, d in zip(time, distance):
     solution *= math.floor((-tt-math.sqrt(tt**2-4*d))/(-2))-math.floor((-tt+math.sqrt(tt**2-4*d))/(-2))-1*(math.sqrt(tt**2-4*d) % 1 == 0)
 
 print('Part 1 solution:',solution)
+
+# Part 2
 
 tt = int("".join(map(str, time)))
 d = int("".join(map(str, distance)))
