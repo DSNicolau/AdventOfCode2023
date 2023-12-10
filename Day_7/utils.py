@@ -1,3 +1,19 @@
+def get_strenghts(play, d):
+    if len(set(play)) == 1: # All cards are the same
+        return 6 # The highest strenght
+    elif len(set(play)) == 4: # There's only one pair
+        return 1 # One of the lowest strenght
+    elif len(set(play)) == 5: # All cards are different
+        return 0 # The lowest strenght
+    elif max(d.values())==4: # Getting four of a kind
+        return 5
+    elif len(set(play)) == 2: # Gettiing 3 of a kind + a pair
+        return 4
+    elif max(d.values())==3: # Getting 3 of a kind
+        return 3
+    return 2 # Getting two pairs
+
+
 def get_sorted_bids(ranks, play_strength, play_int, bid):
     sorted_bid=[]
     for rank in ranks:
@@ -36,3 +52,13 @@ def replaceJ(play):
     else : 
         new_play = play
     return new_play,d
+
+def get_solution(play_strength, play_int, bid):
+    # Sort the strenghts/type
+    ranks = sorted(set(play_strength))
+    sorted_bid = get_sorted_bids(ranks, play_strength, play_int, bid)
+    solution = 0        
+    # Finally, calculate the solution
+    for i in range(len(sorted_bid)):
+        solution += sorted_bid[i]*(i+1)
+    return solution
