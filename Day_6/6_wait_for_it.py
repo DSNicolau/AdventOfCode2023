@@ -26,5 +26,5 @@ distance = [int(i) for i in (data[1].split(':')[1]).split()]
 solution = 1
 for tt, d in zip(time, distance):
     solution *= math.floor((-tt-math.sqrt(tt**2-4*d))/(-2))-math.floor((-tt+math.sqrt(tt**2-4*d))/(-2))-1*(math.sqrt(tt**2-4*d) % 1 == 0)
-    print('ah')
+
 print('Part 1 solution:',solution)
