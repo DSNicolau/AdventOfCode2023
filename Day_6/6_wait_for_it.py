@@ -3,7 +3,7 @@ Day 6: Wait For It
 Author: dnicolauit
 Date: 2023-12-09
 Answer 1: 211904
-Answer 2: 
+Answer 2: 43364472
 """ 
 
 import math
@@ -28,3 +28,9 @@ for tt, d in zip(time, distance):
     solution *= math.floor((-tt-math.sqrt(tt**2-4*d))/(-2))-math.floor((-tt+math.sqrt(tt**2-4*d))/(-2))-1*(math.sqrt(tt**2-4*d) % 1 == 0)
 
 print('Part 1 solution:',solution)
+
+tt = int("".join(map(str, time)))
+d = int("".join(map(str, distance)))
+solution = math.floor((-tt-math.sqrt(tt**2-4*d))/(-2))-math.floor((-tt+math.sqrt(tt**2-4*d))/(-2))-1*(math.sqrt(tt**2-4*d) % 1 == 0)
+
+print('Part 2 solution:',solution)
