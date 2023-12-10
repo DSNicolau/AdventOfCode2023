@@ -7,6 +7,7 @@ Answer 2: 248747492
 """ 
 
 import utils
+
 cards = {'A':14, 
          'K':13, 
          'Q':12, 
