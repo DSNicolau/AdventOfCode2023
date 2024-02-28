@@ -18,6 +18,7 @@ class Almanac:
     
     def almanac_seeds(self):
         self.almanac['seeds'] = [int(j) for j in ((self.data.split(':')[1]).split('\n')[0]).split()]
+        self.almanac['seeds2'] = [[self.almanac['seeds'][i], self.almanac['seeds'][i]+self.almanac['seeds'][i+1]]-1 for i in range(0,len(self.almanac['seeds']),2)] 
 
     def complete_almanac(self):
         for key,conversion in enumerate(self.conversions):
@@ -37,7 +38,22 @@ class Almanac:
         self.current_input = self.almanac['seeds']
         for conversion in self.conversions:
             self.find_dest(conversion=conversion)
+
+    def compute2(self):
+        self.current_input = self.almanac['seeds2']
+
             
+    def find_dest2(self,conversion):
+        new_input = []
+        for seed_min, seed_max in self.current_input:
+            inpu = []
+            inpu = next((dest+seed_min-minim for minim,maxim,dest in self.almanac[conversion] if minim<=seed_min<=maxim), seed_min)
+        for key,seed in enumerate(self.current_input):
+            inpu = []
+            inpu = next((dest+seed-minim for minim,maxim,dest in self.almanac[conversion] if minim<=seed<=maxim), seed)
+            self.current_input[key] = next((dest+seed-minim for minim,maxim,dest in self.almanac[conversion] if minim<=seed<=maxim), seed)
+        self.current_input = new_input
+
 
     def find_dest(self,conversion):
         for key,seed in enumerate(self.current_input):
@@ -45,3 +61,4 @@ class Almanac:
 
     def get_min_location(self):
         return min(self.current_input)
+    

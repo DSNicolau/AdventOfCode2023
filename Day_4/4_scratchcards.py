@@ -1,7 +1,6 @@
 """
 Day 4: Scratchcards
 Author: dnicolauit
-Date: 2023-12-04
 Answer 1: 21138
 Answer 2: 7185540
 """ 

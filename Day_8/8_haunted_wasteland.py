@@ -1,7 +1,6 @@
 """
 Day 8: Haunted Wasteland
 Author: dnicolauit
-Date: 2023-12-10
 Answer 1: 19637
 Answer 2: 8811050362409
 """ 

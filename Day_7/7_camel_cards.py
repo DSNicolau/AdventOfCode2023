@@ -1,7 +1,6 @@
 """
 Day 7: Camel Cards
 Author: dnicolauit
-Date: 2023-12-10
 Answer 1: 247815719
 Answer 2: 248747492
 """ 

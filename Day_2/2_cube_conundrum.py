@@ -1,7 +1,6 @@
 """
 Day 2: Cube Conundrum
 Author: dnicolauit
-Date: 2023-12-02
 Answer 1: 2486
 Answer 2: 87984
 """

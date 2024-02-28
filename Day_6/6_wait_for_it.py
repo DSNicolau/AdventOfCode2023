@@ -1,7 +1,6 @@
 """
 Day 6: Wait For It
 Author: dnicolauit
-Date: 2023-12-09
 Answer 1: 211904
 Answer 2: 43364472
 """ 

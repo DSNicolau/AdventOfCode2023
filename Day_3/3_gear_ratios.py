@@ -1,7 +1,6 @@
 """
 Day 3: Gear Ratios
 Author: dnicolauit
-Date: 2023-12-03
 Answer 1: 537832
 Answer 2: 81939900
 """ 
