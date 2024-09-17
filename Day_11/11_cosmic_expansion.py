@@ -2,7 +2,7 @@
 Day 11: Cosmic Expansion
 Author: dnicolauit
 Answer 1: 9974721
-Answer 2: 
+Answer 2: 702770569197
 """ 
 import copy
 data = open("Day_11/11_cosmic_expansion_data.txt").read().splitlines()
@@ -76,4 +76,5 @@ def sum_lens_n_empty(positions,data,n):
 
 n = 1000000
 positions_init = get_pos(data)
-print(sum_lens_n_empty(positions_init,data,n-1))
+solution = sum_lens_n_empty(positions_init,data,n-1)
+print('Part 2 solution:',solution)
