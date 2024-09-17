@@ -1,12 +1,12 @@
 """
 Day 10: Pipe Maze
 Author: dnicolauit
-Answer 1: 
+Answer 1: 6800
 Answer 2: 
 """ 
 
-# data = open("Day_10/10_pipe_maze_data.txt").read().splitlines()
-data = open("Day_10/10_example5.txt").read().splitlines()
+data = open("Day_10/10_pipe_maze_data.txt").read().splitlines()
+# data = open("Day_10/10_example7.txt").read().splitlines()
 data = [[j for j in i] for i in data]
 
 i = 0
@@ -135,3 +135,4 @@ while not finished:
 
 solution = int(travel_len/2)
 print('Part 1 solution:',solution)
+
