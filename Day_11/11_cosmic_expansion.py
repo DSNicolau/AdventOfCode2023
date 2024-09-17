@@ -10,8 +10,6 @@ data = open("Day_11/11_cosmic_expansion_data.txt").read().splitlines()
 
 data = [[j for j in i] for i in data]
 
-# def n_pairs(n):
-#     return int((n*(n-1))/2)
 
 def expand_data(data):
     temp_data=copy.deepcopy(data)
